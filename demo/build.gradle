@@ -1,4 +1,28 @@
-//add everything here
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+}
+
+repositories {
+    mavenCentral()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.epam'
+            artifactId = 'demo'
+            version = '1.0.0'
+
+            from components.java
+        }
+    }
+}
+
 
 test {
     useJUnitPlatform()
